@@ -5,4 +5,7 @@ describe('String#rock_paper_scissors') do
   it("returns the result for a rock, paper, scissors game") do
   expect("Rock".rps("Rock")).to(eq("Draw Game"))
   end
+  it("returns the result for a rock, paper, scissors game") do
+  expect("Rock".rps("Scissors")).to(eq("Player 1 wins!"))
+  end
 end
