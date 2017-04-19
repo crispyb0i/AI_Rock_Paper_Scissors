@@ -8,6 +8,6 @@ get('/') do
 end
 
 get('/title') do
-  @title = (params.fetch('title1')).rps(params.fetch('title2'))
+  @title = (params.fetch('title1')).rps()
   erb(:title)
 end

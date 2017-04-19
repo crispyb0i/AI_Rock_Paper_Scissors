@@ -1,33 +1,43 @@
 require('pry')
 
 class String
-  define_method(:rps) do |player2|
-    if self==="Rock" && player2==="Rock"
-      result = "Draw Game"
+  define_method(:rps) do
+    random = rand(1..3)
+    if random===1
+      computer = "Rock"
     end
-    if self==="Rock" && player2==="Paper"
-      result = "Player 2 wins!"
+    if random===2
+      computer = "Paper"
     end
-    if self==="Rock" && player2==="Scissors"
-      result = "Player 1 wins!"
+    if random===3
+      computer = "Scissors"
     end
-    if self==="Scissors" && player2==="Rock"
-      result = "Player 2 wins!"
+    if self==="Rock" && computer==="Rock"
+      result = "Computer threw Rock. Draw Game"
     end
-    if self==="Scissors" && player2==="Paper"
-      result = "Player 1 wins!"
+    if self==="Rock" && computer==="Paper"
+      result = "Computer threw Paper. Computer wins!"
     end
-    if self==="Scissors" && player2==="Scissors"
-      result = "Draw Game"
+    if self==="Rock" && computer==="Scissors"
+      result = "Computer threw Scissors. Player 1 wins!"
     end
-    if self==="Paper" && player2==="Rock"
-      result = "Player 1 wins!"
+    if self==="Scissors" && computer==="Rock"
+      result = "Computer threw Rock. Computer wins!"
     end
-    if self==="Paper" && player2==="Paper"
-      result = "Draw Game"
+    if self==="Scissors" && computer==="Paper"
+      result = "Computer threw Paper. Player 1 wins!"
     end
-    if self==="Paper" && player2==="Scissors"
-      result = "Player 1 wins!"
+    if self==="Scissors" && computer==="Scissors"
+      result = "Computer threw Scissors. Draw Game"
+    end
+    if self==="Paper" && computer==="Rock"
+      result = "Computer threw Scissors. Player 1 wins!"
+    end
+    if self==="Paper" && computer==="Paper"
+      result = "Computer threw Paper. Draw Game"
+    end
+    if self==="Paper" && computer==="Scissors"
+      result = "Computer threw Scissors. Computer Wins!"
     end
     result
   end
